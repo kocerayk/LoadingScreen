@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.kinetic {
+  position: relative;
+  height: 120px;
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.kinetic::after,
+.kinetic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-radius: 50%;
+  border-bottom-color: #1e88e5;
+  animation: rotateA 1.5s linear infinite;
+}
+
+.kinetic::before {
+  border-bottom-color: #8e24aa;
+  animation: rotateB 1.5s linear infinite reverse;
+}
+
+@keyframes rotateA {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateB {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+
+.loading-text {
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #1e88e5, #8e24aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 51%;
+  left: 57%;
+  transform: translate(-50%, -55%);
+}
